@@ -49,6 +49,7 @@
 AK-AIGC-Studio/
 ├── audio/                      # 音频模态模块 (TTS、克隆、音效)
 │   ├── infer_tts.py            # CosyVoice / F5-TTS 推理入口
+│   ├── webui_cosyvoice.py      # CosyVoice 2 Gradio 可视化工坊 WebUI
 │   └── README.md
 ├── image/                      # 图像生成模块 (文生图、分镜线稿)
 │   ├── generate_image.py       # FLUX.1 / SDXL 推理脚本

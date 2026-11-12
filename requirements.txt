@@ -23,8 +23,10 @@ imageio[ffmpeg]>=2.35.0
 einops>=0.8.0
 timm>=1.0.9
 
-# Utility
+# Utility & WebUI
 pyyaml>=6.0.2
 tqdm>=4.66.5
 requests>=2.32.3
 huggingface_hub>=0.25.0
+gradio>=4.38.0
+
