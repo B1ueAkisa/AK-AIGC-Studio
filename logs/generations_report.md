@@ -1,12 +1,12 @@
 # 📊 AK-AIGC-Studio 算力消耗与生成账本
 
-> 自动生成自 `generation_log.jsonl` | 统计条数：**12** 次 | 累计耗时：**80.1 分钟** | 累计估算消耗：**16.412 点 (CU)**
+> 自动生成自 `generation_log.jsonl` | 统计条数：**13** 次 | 累计耗时：**108.4 分钟** | 累计估算消耗：**22.540 点 (CU)**
 
 ## 📦 按模型统计
 
 | 模型 | 运行次数 | 累计耗时 | 估算点数 (CU) |
 | :--- | :---: | :---: | :---: |
-| `Lightricks/LTX-2` | 2 | 1311.2s | 4.735 |
+| `Lightricks/LTX-2` | 3 | 3008.0s | 10.862 |
 | `Wan-AI/Wan2.2-I2V-A14B-Diffusers` | 1 | 1048.5s | 3.786 |
 | `Qwen/Qwen-Image-2.1` | 4 | 793.9s | 2.867 |
 | `THUDM/CogVideoX1.5-5B-I2V` | 1 | 586.3s | 2.117 |
@@ -17,6 +17,7 @@
 
 | 时间 (UTC+8) | 类型 | 模型 | 显卡 | 耗时 | 估算点数 | 产物 | 状态 |
 | :--- | :---: | :--- | :--- | :---: | :---: | :--- | :---: |
+| 2026-11-14 14:43:23 | video | `Lightricks/LTX-2` | NVIDIA A100-SXM4-40GB | 1696.8s | 6.127 | `axe_at_library_ltx2.mp4` | success |
 | 2026-11-14 11:53:37 | video | `hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-480p_i2v` | NVIDIA A100-SXM4-40GB | 549.2s | 1.983 | `axe_at_library_hunyuan15.mp4` | success |
 | 2026-11-14 11:39:27 | video | `Lightricks/LTX-2` | NVIDIA A100-SXM4-40GB | 691.1s | 2.495 | `axe_at_library_ltx2.mp4` | error: OutOfMemoryError |
 | 2026-11-14 11:25:22 | video | `Lightricks/LTX-2` | NVIDIA A100-SXM4-40GB | 620.2s | 2.240 | `axe_at_library_ltx2.mp4` | error: ImportError |
