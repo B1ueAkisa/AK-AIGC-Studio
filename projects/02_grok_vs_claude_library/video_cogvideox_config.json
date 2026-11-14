@@ -1,0 +1,24 @@
+{
+  "project": "02_grok_vs_claude_library_video_cogvideox",
+  "gpu": "A100",
+  "modality": "video",
+  "model": "cogvideox1.5-i2v",
+  "assets_dir": "outputs",
+  "assets": {
+    "scene": "axe_at_library_qwen21.png"
+  },
+  "tasks": [
+    {
+      "name": "grok_axe_swing_cogvideox15",
+      "image_key": "scene",
+      "width": 832,
+      "height": 480,
+      "num_frames": 49,
+      "fps": 16,
+      "steps": 30,
+      "seed": 42,
+      "output": "axe_at_library_cogvideox15.mp4",
+      "prompt": "Dynamic anime action scene. On the left, the blonde twin-tail demon girl fiercely swings her giant X-shaped battleaxe downward with a powerful motion blur while her black-and-red dress and bat wings flutter violently. On the right, the terrified orange-haired scholar girl flinches backward hugging her leather book tightly as loose white papers scatter and swirl wildly through the sunlit library air. Smooth 2D anime animation, expressive motion, dramatic camera shake."
+    }
+  ]
+}

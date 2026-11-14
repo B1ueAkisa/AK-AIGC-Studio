@@ -1,0 +1,22 @@
+{
+  "project": "02_grok_vs_claude_library",
+  "gpu": "A100",
+  "model": "qwen-image-2.1",
+  "assets_dir": "D:\\AKFile\\其他\\AI娘化_ZipZipPipe",
+  "assets": {
+    "grok": "08_Grok_xAI(马斯克X斧双马尾).jpg",
+    "claude": "06_Claude_Anthropic(文学学者).jpg"
+  },
+  "tasks": [
+    {
+      "name": "axe_at_library_qwen21",
+      "ref_keys": ["grok", "claude"],
+      "width": 1280,
+      "height": 720,
+      "steps": 30,
+      "seed": 77,
+      "output": "axe_at_library_qwen21.png",
+      "prompt": "A comedic 2D anime illustration featuring the two girls from the first and second reference images inside a classic library. On the left, the rebellious blonde twin-tail demon girl from the first image wearing her gothic black-and-red outfit and bat wings is standing on a wooden chair, angrily slamming her giant black-and-red X-shaped battleaxe onto the wooden desk. On the right, the elegant terracotta-orange haired scholar girl from the second image in her Victorian dress is hugging a thick leather book tightly, sweating and looking panicked as loose papers fly into the air from the axe impact. Vibrant anime art style, expressive comedic faces, crisp lineart."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "project": "AI娘化_ZipZipPipe_Crossover",
+  "gpu": "A100",
+  "model": "qwen-image-2.1",
+  "assets_dir": "D:\\AKFile\\其他\\AI娘化_ZipZipPipe",
+  "assets": {
+    "whale": "01_DeepSeek_深度求索(鲸鱼娘).png",
+    "cat": "05_Gemini_谷歌双子座(猫娘).jpg",
+    "dragon": "07_ChatGPT_OpenAI(龙娘与Sora).jpg"
+  },
+  "tasks": [
+    {
+      "name": "cat_eats_fish",
+      "ref_keys": ["cat", "whale"],
+      "width": 1280,
+      "height": 720,
+      "steps": 30,
+      "seed": 42,
+      "output": "cat_eats_fish_qwen21.png",
+      "prompt": "A lively anime illustration featuring both characters from the two reference images together in one scene. On the left, the playful cyber cat-girl with heterochromia eyes (pink and golden) and blue-purple four-pointed star hairpins is pouncing forward with an excited grin, playfully chomping at the single huge blue whale tail of the blue-haired maid girl on the right. The blue-haired whale maid girl wears her blue-and-white maid outfit with the small blue whale apron pattern, looking surprised and flustered. Only one whale tail. Cohesive vibrant 2D anime art style, clean lineart, dynamic comedic interaction."
+    },
+    {
+      "name": "fish_rides_dragon",
+      "ref_keys": ["whale", "dragon"],
+      "width": 1280,
+      "height": 720,
+      "steps": 30,
+      "seed": 1024,
+      "output": "fish_rides_dragon_qwen21.png",
+      "prompt": "An epic vibrant anime illustration combining both characters from the two reference images in the sky above fluffy clouds. The blue-haired whale maid girl with her large blue whale tail and maid apron is cheerfully riding piggyback on the back of the regal pure-white dragon girl who is flying in mid-air. The white dragon girl has white dragon horns, large white dragon wings spread wide in flight, a scaly white dragon tail, and wears her sleek white slit dress with black trim. A cute little blue cloud with eyes floats beside them. Cohesive 2D anime illustration, crisp details, bright sky, dynamic sense of flying."
+    }
+  ]
+}

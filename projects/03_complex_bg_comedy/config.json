@@ -1,0 +1,33 @@
+{
+  "project": "03_complex_bg_comedy",
+  "gpu": "A100",
+  "model": "qwen-image-2.1",
+  "assets_dir": "D:\\AKFile\\其他\\AI娘化_ZipZipPipe",
+  "assets": {
+    "dragon": "07_ChatGPT_OpenAI(龙娘与Sora).jpg",
+    "qwen": "04_Qwen_通义千问(千问妈妈).jpg",
+    "kimi": "02_Kimi_月之暗面(音乐家).png"
+  },
+  "tasks": [
+    {
+      "name": "gpt_downgrade_village",
+      "ref_keys": ["dragon"],
+      "width": 1280,
+      "height": 720,
+      "steps": 30,
+      "seed": 2026,
+      "output": "gpt_downgrade_village.png",
+      "prompt": "A hilarious detailed 2D anime illustration set in a bustling medieval fantasy village square with cobblestone paths, timber-framed cottages, a distant windmill, market stalls, and a crowd of shocked villagers holding pitchforks and lanterns staring in disbelief. In the foreground, the majestic pure-white dragon girl from the reference image (white dragon horns, large white wings, scaly white tail, white slit dress with black trim) is squatting clumsily in a mud puddle with a vacant, silly, derpy drooling expression, poking the dirt with a twig where '1+1=3' is scribbled. Beside her, the little blue cloud with eyes (Sora) looks facepalming and sweating awkwardly. Rich intricate background, dramatic comedic contrast, vibrant anime art style."
+    },
+    {
+      "name": "qwen_kimi_square_dance",
+      "ref_keys": ["qwen", "kimi"],
+      "width": 1280,
+      "height": 720,
+      "steps": 30,
+      "seed": 888,
+      "output": "qwen_kimi_square_dance.png",
+      "prompt": "A lively, detailed 2D anime illustration set in a bustling Chinese neon night plaza with glowing shop signs, street food stalls, a lit fountain, big portable speakers, and cheering elderly aunties dancing in the background. In the foreground, the dignified blue-purple haired lady from the first reference image in her Chinese ink-wash embroidered dress and beret is striking a confident square-dance pose holding her folding fan high. Beside her, the shy timid girl from the second reference image with her rainbow prism hairpin and piano-key skirt is sweating nervously, awkwardly playing her silver flute as dance music accompaniment. Rich colorful night plaza background, festive lighting, comedic anime scene."
+    }
+  ]
+}
