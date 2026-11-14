@@ -1,19 +1,26 @@
 # 📊 AK-AIGC-Studio 算力消耗与生成账本
 
-> 自动生成自 `generation_log.jsonl` | 统计条数：**8** 次 | 累计耗时：**39.3 分钟** | 累计估算消耗：**7.577 点 (CU)**
+> 自动生成自 `generation_log.jsonl` | 统计条数：**12** 次 | 累计耗时：**80.1 分钟** | 累计估算消耗：**16.412 点 (CU)**
 
 ## 📦 按模型统计
 
 | 模型 | 运行次数 | 累计耗时 | 估算点数 (CU) |
 | :--- | :---: | :---: | :---: |
+| `Lightricks/LTX-2` | 2 | 1311.2s | 4.735 |
 | `Wan-AI/Wan2.2-I2V-A14B-Diffusers` | 1 | 1048.5s | 3.786 |
 | `Qwen/Qwen-Image-2.1` | 4 | 793.9s | 2.867 |
+| `THUDM/CogVideoX1.5-5B-I2V` | 1 | 586.3s | 2.117 |
+| `hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-480p_i2v` | 1 | 549.2s | 1.983 |
 | `OmniGen2/OmniGen2` | 3 | 517.9s | 0.924 |
 
 ## 📝 详细生成流水
 
 | 时间 (UTC+8) | 类型 | 模型 | 显卡 | 耗时 | 估算点数 | 产物 | 状态 |
 | :--- | :---: | :--- | :--- | :---: | :---: | :--- | :---: |
+| 2026-11-14 11:53:37 | video | `hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-480p_i2v` | NVIDIA A100-SXM4-40GB | 549.2s | 1.983 | `axe_at_library_hunyuan15.mp4` | success |
+| 2026-11-14 11:39:27 | video | `Lightricks/LTX-2` | NVIDIA A100-SXM4-40GB | 691.1s | 2.495 | `axe_at_library_ltx2.mp4` | error: OutOfMemoryError |
+| 2026-11-14 11:25:22 | video | `Lightricks/LTX-2` | NVIDIA A100-SXM4-40GB | 620.2s | 2.240 | `axe_at_library_ltx2.mp4` | error: ImportError |
+| 2026-11-14 09:25:59 | video | `THUDM/CogVideoX1.5-5B-I2V` | NVIDIA A100-SXM4-40GB | 586.3s | 2.117 | `axe_at_library_cogvideox15.mp4` | success |
 | 2026-11-14 07:52:53 | video | `Wan-AI/Wan2.2-I2V-A14B-Diffusers` | NVIDIA A100-SXM4-40GB | 1048.5s | 3.786 | `axe_at_library_wan22.mp4` | success |
 | 2026-11-14 07:30:28 | image | `Qwen/Qwen-Image-2.1` | NVIDIA A100-SXM4-40GB | 83.1s | 0.300 | `qwen_kimi_square_dance.png` | success |
 | 2026-11-14 07:29:04 | image | `Qwen/Qwen-Image-2.1` | NVIDIA A100-SXM4-40GB | 174.7s | 0.631 | `gpt_downgrade_village.png` | success |

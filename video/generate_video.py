@@ -19,6 +19,8 @@ from colab.tracker import track_generation
 VIDEO_MODEL_REGISTRY = {
     "wan2.2-i2v": "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
     "cogvideox1.5-i2v": "THUDM/CogVideoX1.5-5B-I2V",
+    "ltx-2": "Lightricks/LTX-2",
+    "hunyuan1.5-i2v": "hunyuanvideo-community/HunyuanVideo-1.5-Diffusers-480p_i2v",
 }
 
 
@@ -40,6 +42,8 @@ def generate_video(
     """Generate an image-to-video clip on GPU using diffusers with automatic tracking."""
     import torch
     from diffusers.utils import export_to_video, load_image
+
+    os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 
     if not torch.cuda.is_available():
         raise RuntimeError("未检测到 GPU！请在 Colab 中切换为 A100/L4 GPU 运行时。")
@@ -89,7 +93,11 @@ def generate_video(
             from diffusers import CogVideoXImageToVideoPipeline
 
             pipe = CogVideoXImageToVideoPipeline.from_pretrained(repo_id, **load_kwargs)
-            pipe.enable_model_cpu_offload()
+            vram_gb = torch.cuda.get_device_properties(0).total_memory / (1024**3)
+            if vram_gb >= 35:
+                pipe.to("cuda")
+            else:
+                pipe.enable_model_cpu_offload()
             pipe.vae.enable_slicing()
             pipe.vae.enable_tiling()
             frames = pipe(
@@ -98,6 +106,38 @@ def generate_video(
                 num_frames=num_frames,
                 num_inference_steps=steps,
                 guidance_scale=guidance_scale,
+                generator=generator,
+            ).frames[0]
+        elif "ltx-2" in repo_id.lower() or "ltx" in repo_id.lower():
+            from diffusers import LTX2ImageToVideoPipeline
+
+            pipe = LTX2ImageToVideoPipeline.from_pretrained(repo_id, **load_kwargs)
+            vram_gb = torch.cuda.get_device_properties(0).total_memory / (1024**3)
+            if vram_gb < 45:
+                pipe.enable_sequential_cpu_offload()
+            else:
+                pipe.enable_model_cpu_offload()
+            frames = pipe(
+                image=init_img,
+                prompt=prompt,
+                negative_prompt="shaky, glitchy, low quality, worst quality, deformed, static image",
+                width=width,
+                height=height,
+                num_frames=num_frames,
+                num_inference_steps=steps,
+                generator=generator,
+            ).frames[0]
+        elif "hunyuan" in repo_id.lower():
+            from diffusers import HunyuanVideo15ImageToVideoPipeline
+
+            pipe = HunyuanVideo15ImageToVideoPipeline.from_pretrained(repo_id, **load_kwargs)
+            pipe.enable_model_cpu_offload()
+            pipe.vae.enable_tiling()
+            frames = pipe(
+                prompt=prompt,
+                image=init_img,
+                num_frames=num_frames,
+                num_inference_steps=steps,
                 generator=generator,
             ).frames[0]
         else:

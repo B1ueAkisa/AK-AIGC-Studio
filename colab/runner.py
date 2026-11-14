@@ -212,7 +212,7 @@ def main() -> None:
         "os.makedirs('/content/outputs', exist_ok=True)",
         "os.makedirs('/content/logs', exist_ok=True)",
         "open('/content/ak_studio/colab/__init__.py', 'w').close()",
-        "subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-q', '--upgrade', 'transformers', 'accelerate', 'pillow', 'imageio', 'imageio-ffmpeg', 'ftfy'])",
+        "subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-q', '--upgrade', 'transformers', 'accelerate', 'pillow', 'imageio', 'imageio-ffmpeg', 'ftfy', 'av'])",
         "subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-q', 'git+https://github.com/huggingface/diffusers'])",
         "sys.path.insert(0, '/content/ak_studio')",
         "from image.generate_image import generate_image",
